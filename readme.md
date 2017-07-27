@@ -18,7 +18,7 @@ Docker-app is similar to docker-compose but has some more functionality to custo
 
 # Overview
 
-Process of installing server in Docker container consists of the following stages:
+Process of installing server in Docker container has the following stages:
 
 Process of building and running container on the host machine:
 * Build Docker image
