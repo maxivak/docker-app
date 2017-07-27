@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["max.ivak@gmail.com"]
 
   spec.summary       = 'Docker application installer'
-  spec.description   = "Install Docker containers with Chef, Dockerfile and other tools"
+  spec.description   = "Run Docker containers and provision with Chef, shell and other tools"
   spec.homepage      = "https://github.com/maxivak/docker-app"
   spec.license       = "MIT"
 

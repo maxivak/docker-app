@@ -1,7 +1,7 @@
 # Docker app
 
 Docker app is a tool to install and setup Docker containers.
-It uses Dockerfile, Chef and other provisioning tools.
+It uses Dockerfile, Chef and other tools for provisioning.
 
 Features:
 * Config files are in Ruby.
