@@ -139,8 +139,10 @@ module DockerApp
     def self._run_bootstrap_script_in_container_shell(settings, script)
       script_path = script['script']
 
+      exec_options = script['exec_options'] || ''
+
       # exec
-      cmd %Q(docker exec #{settings.container_name} #{script_path} )
+      cmd %Q(docker exec #{exec_options} #{settings.container_name} #{script_path} )
     end
 
     def self._run_bootstrap_script_in_container_chef(settings, script)

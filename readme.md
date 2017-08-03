@@ -851,3 +851,68 @@ ip route
 
 * [Nginx with Mysql](https://github.com/maxivak/docker-nginx-mysql-example)
 
+
+## Examples. Bootstrap scripts
+
+### basic
+
+* change root password
+
+```
+'provision' => {
+
+    "bootstrap" => [
+    
+        {
+            'type' => 'shell',
+            'script'=>%Q(bash -c "echo 'root:newpass' | chpasswd")
+        },
+    ]
+},
+        
+```
+
+it will run command:
+```
+docker exec container_name  bash -c "sh /tmp/bootstrap.sh"
+```
+
+
+### run script on the host machine
+
+* use option `run_from'=>'host'` for bootstrap script
+```
+'provision' => {
+    "bootstrap" => [
+        {
+            'type' => 'shell',
+            'script'=>'do smth...',
+            'run_from'=>'host'
+        },
+    ]
+},
+     
+```
+
+
+### additional options for docker exec
+
+* run script under another non-root user
+
+```
+'provision' => {
+    "bootstrap" => [
+        {
+            'type' => 'shell',
+            'script'=>%Q(bash -c "sh /tmp/bootstrap.sh"),
+            'exec_options'=>'--user app'
+        },
+    ]
+},
+
+```
+
+it will run command:
+```
+docker exec --user app container_name  bash -c "sh /tmp/bootstrap.sh"
+```
